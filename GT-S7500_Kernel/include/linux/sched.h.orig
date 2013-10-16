@@ -1222,12 +1222,11 @@ struct task_struct {
 	struct list_head run_list;
 	u64 last_ran;
 	u64 sched_time; /* sched_clock time spent running */
-#endif
 #ifdef CONFIG_SMP
 	int sticky; /* Soft affined flag */
 #endif
-#ifdef CONFIG_SCHED_BFS
 	unsigned long rt_timeout;
+#else /* CONFIG_SCHED_BFS */
 	const struct sched_class *sched_class;
 	struct sched_entity se;
 	struct sched_rt_entity rt;
@@ -1582,7 +1581,6 @@ static inline int iso_task(struct task_struct *p)
 	return (p->policy == SCHED_ISO);
 }
 extern void remove_cpu(unsigned long cpu);
-extern int above_background_load(void);
 #else /* CFS */
 extern int runqueue_is_locked(int cpu);
 static inline void cpu_scaling(int cpu)
@@ -1612,12 +1610,6 @@ static inline int iso_task(struct task_struct *p)
 
 static inline void remove_cpu(unsigned long cpu)
 {
-}
-
-/* Anyone feel like implementing this? */
-static inline int above_background_load(void)
-{
-	return 1;
 }
 #endif /* CONFIG_SCHED_BFS */
 

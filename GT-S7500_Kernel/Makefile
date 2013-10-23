@@ -192,7 +192,7 @@ export KBUILD_BUILDHOST := $(SUBARCH)
 #CROSS_COMPILE	?= $(CONFIG_CROSS_COMPILE:"%"=%)
 ARCH		=arm
 CROSS_COMPILE	=../toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86_64/bin/arm-linux-androideabi-
-							  #android-toolchain-eabi-4.6/bin/arm-linux-androideabi-
+							  #android-toolchain-linaro-eabi-4.6/bin/arm-linux-androideabi-
 
 # Architecture as present in compile.h
 UTS_MACHINE 	:= $(ARCH)
@@ -342,14 +342,16 @@ CC		= $(srctree)/scripts/gcc-wrapper.py $(REAL_CC)
 
 CHECKFLAGS     := -D__linux__ -Dlinux -D__STDC__ -Dunix -D__unix__ \
 		  -Wbitwise -Wno-return-void $(CF)
+		  
+												 #-mtune=cortex-a5
 
-OPTIMIZE_FLAGS	= -march=armv7-a -mtune=cortex-a5 -mfpu=neon -O2
+OPTIMIZE_FLAGS	= -march=armv7-a -mfpu=neon -O2
 
-CFLAGS_MODULE   = 
-AFLAGS_MODULE   = 
+CFLAGS_MODULE   = $(OPTIMIZE_FLAGS)
+AFLAGS_MODULE   = $(OPTIMIZE_FLAGS)
 LDFLAGS_MODULE  =
-CFLAGS_KERNEL	= 
-AFLAGS_KERNEL	= 
+CFLAGS_KERNEL	= $(OPTIMIZE_FLAGS)
+AFLAGS_KERNEL	= $(OPTIMIZE_FLAGS)
 CFLAGS_GCOV	= -fprofile-arcs -ftest-coverage
 
 

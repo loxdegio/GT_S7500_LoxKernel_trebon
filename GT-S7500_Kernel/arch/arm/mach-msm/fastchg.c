@@ -17,7 +17,7 @@
 #include <linux/fastchg.h>
 #include <linux/module.h>
 
-int force_fast_charge=0;
+int force_fast_charge=1;
 EXPORT_SYMBOL(force_fast_charge);
 
 /* sysfs interface */
@@ -49,8 +49,6 @@ static struct kobject *force_fast_charge_kobj;
 int force_fast_charge_init(void)
 {
 	int retval;
-
-	force_fast_charge = 1;
 
 	force_fast_charge_kobj = kobject_create_and_add("fast_charge", kernel_kobj);
 	if (!force_fast_charge_kobj) {

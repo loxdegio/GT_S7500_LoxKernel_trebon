@@ -43,9 +43,9 @@
 #include <linux/notifier.h>
 
 static uint32_t lowmem_debug_level = 1;
-static short lowmem_adj[6] = { 0,3,6,10,12,15 };
+static short lowmem_adj[6] = { 0,2,5,7,15,16 };
 static int lowmem_adj_size = 6;
-static int lowmem_minfree[6] = { 2560,4096,5632,51200,57600,64000 };
+static int lowmem_minfree[6] = { 4096,5632,6758,51200,128000,69120 };
 static int lowmem_minfree_size = 6;
 
 static unsigned long lowmem_deathpending_timeout;

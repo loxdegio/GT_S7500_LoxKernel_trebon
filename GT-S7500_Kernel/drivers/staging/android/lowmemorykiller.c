@@ -46,12 +46,12 @@ static uint32_t lowmem_debug_level = 1;
 static short lowmem_adj[6] = { 0,2,5,7,15,16 };
 static int lowmem_adj_size = 6;
 static int lowmem_minfree[6] = { 
+	 2560, /*  10MB */
 	 4096, /*  16MB */
-	 5632, /*  22MB */
 	 6758, /*  26MB */
 	11776, /*  46MB */
 	28160, /* 110MB */
-	32000  /* 125MB */
+	30720  /* 120MB */
 };
 static int lowmem_minfree_size = 6;
 

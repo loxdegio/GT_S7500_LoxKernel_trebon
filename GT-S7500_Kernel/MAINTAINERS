@@ -7007,10 +7007,3 @@ T:	git git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux-2.6.git
 S:	Buried alive in reporters
 F:	*
 F:	*/
-
-SAMSUNG GALAXY ACE PLUS LOXKERNEL SUPPORT AND FEATURES
-M: Lorenzo Degioanni <loxdegio@hotmail.com>
-Q: git git://github.com/loxdegio/GT_S7500_LoxKernel_trebon
-S: Mantained
-F: *
-F: */

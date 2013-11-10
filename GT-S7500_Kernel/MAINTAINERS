@@ -112,6 +112,12 @@ Maintainers List (try to look for most precise areas first)
 
 		-----------------------------------
 
+SAMSUNG GALAXY ACE PLUS LOXKERNEL MANTAIN AND SUPPORT
+M: Lorenzo Degioanni <loxdegio@hotmail.com>
+S: Mantained
+F: *
+F: */
+
 3C505 NETWORK DRIVER
 M:	Philip Blundell <philb@gnu.org>
 L:	netdev@vger.kernel.org

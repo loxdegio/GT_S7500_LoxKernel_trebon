@@ -118,7 +118,7 @@ static void __bfq_exit_single_io_context(struct bfq_data *bfqd,
 		rcu_read_unlock();
 
 	if (cic->cfqq[BLK_RW_ASYNC] != NULL) {
-		bfq_exit_bfqq(bfqd, cic->cfqq[BLK_RW_ASYNC]);
+		bfq_exit_bfqq(bfqd, (void *) (cic->cfqq[BLK_RW_ASYNC]));
 		cic->cfqq[BLK_RW_ASYNC] = NULL;
 	}
 

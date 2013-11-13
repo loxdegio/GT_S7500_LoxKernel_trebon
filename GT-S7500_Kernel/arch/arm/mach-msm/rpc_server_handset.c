@@ -300,7 +300,7 @@ static int hs_find_key(uint32_t hscode)
 	return -1;
 }
 
-/* static void update_state(void)
+static void update_state(void)
 {
 	int state;
 
@@ -314,7 +314,7 @@ static int hs_find_key(uint32_t hscode)
 		state = 0;
 
 	switch_set_state(&hs->sdev, state);
-}*/
+}
 
 /*
  * tuple format: (key_code, key_param)
@@ -719,7 +719,7 @@ static void __devexit hs_rpc_deinit(void)
 		msm_rpc_unregister_client(rpc_client);
 }
 
-/* static ssize_t msm_headset_print_name(struct switch_dev *sdev, char *buf)
+static ssize_t msm_headset_print_name(struct switch_dev *sdev, char *buf)
 {
 	switch (switch_get_state(&hs->sdev)) {
 	case NO_DEVICE:
@@ -728,7 +728,7 @@ static void __devexit hs_rpc_deinit(void)
 		return sprintf(buf, "Headset\n");
 	}
 	return -EINVAL;
-} */
+}
 
 static int __devinit hs_probe(struct platform_device *pdev)
 {

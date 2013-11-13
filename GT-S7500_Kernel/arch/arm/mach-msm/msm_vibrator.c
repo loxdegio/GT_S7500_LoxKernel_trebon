@@ -46,7 +46,7 @@ VibeInt32 g_nLRA_GP_CLK_D = GP_CLK_N_DEFAULT;
 VibeInt32 g_nLRA_GP_CLK_PWM_MUL = IMM_PWM_MULTIPLIER;
 
 static struct hrtimer vibe_timer;
-//static int is_vibe_on = 0;
+static int is_vibe_on = 0;
 
 
 static int msm_vibrator_suspend(struct platform_device *pdev, pm_message_t state);
@@ -226,7 +226,7 @@ static void pmic_vibrator_off(void)
 
 static void vibrator_enable(struct timed_output_dev *dev, int value)
 {
-	//unsigned long flags;
+	unsigned long flags;
 
 	hrtimer_cancel(&vibe_timer);
 

@@ -70,8 +70,8 @@ EXPORT_SYMBOL(panic_blink);
  *	This function never returns.
  */
 #ifdef CONFIG_APPLY_GA_SOLUTION
-extern void dump_all_task_info(void);
-extern void dump_cpu_stat(void);
+extern void dump_all_task_info();
+extern void dump_cpu_stat();
 #endif
 NORET_TYPE void panic(const char *fmt, ...)
 {
@@ -79,10 +79,6 @@ NORET_TYPE void panic(const char *fmt, ...)
 	va_list args;
 	long i, i_next = 0;
 	int state = 0;
-	#ifdef CONFIG_SEC_DEBUG
-	unsigned size;
-	samsung_vendor1_id *smem_vendor1;
-	#endif
 
 	/*
 	 * It's possible to come here directly from a panic-assertion and
@@ -101,7 +97,7 @@ NORET_TYPE void panic(const char *fmt, ...)
 	dump_stack();
 #endif
 
-#ifdef CONFIG_SEC_DEBUG
+#if defined(CONFIG_SEC_DEBUG)
 	do {
 		extern void sec_save_final_context(void);
 		sec_save_final_context();
@@ -113,8 +109,9 @@ NORET_TYPE void panic(const char *fmt, ...)
 	dump_cpu_stat();
 #endif
 
-#ifdef CONFIG_SEC_DEBUG
-	smem_vendor1 = (samsung_vendor1_id *) \
+#if defined(CONFIG_SEC_DEBUG)
+	unsigned size;
+	samsung_vendor1_id *smem_vendor1 = (samsung_vendor1_id *) \
 			smem_get_entry(SMEM_ID_VENDOR1, &size);
 
 	if (smem_vendor1 && smem_vendor1->ram_dump_level) {

@@ -47,7 +47,7 @@ static struct led_classdev msm_kp_bl_led = {
 	.name			= "button-backlight",			//"keyboard-backlight",
 	.brightness_set		= msm_keypad_bl_led_set,
 	.brightness		= 0,
-        .max_brightness         = 1,
+   .max_brightness         = 1,
 };
 
 #ifdef CONFIG_KEYPAD_TOUCH_BLN

@@ -43,12 +43,12 @@
 #include <linux/notifier.h>
 
 static uint32_t lowmem_debug_level = 1;
-static short lowmem_adj[6] = { -12,0,1,2,5,7 };
+static short lowmem_adj[6] = { 0,2,5,7,15,16 };
 static int lowmem_adj_size = 6;
 static int lowmem_minfree[6] = { 
 	 4096, /*  16MB */
+	 5632, /*  22MB */
 	 6758, /*  26MB */
-	 9216, /*  36MB */
 	11776, /*  46MB */
 	29696, /* 116MB */
 	32256  /* 126MB */

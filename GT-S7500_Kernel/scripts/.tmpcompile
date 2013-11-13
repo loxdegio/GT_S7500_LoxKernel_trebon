@@ -1,8 +1,8 @@
 /* This file is auto generated, version 0 */
 #define UTS_MACHINE ""
-#define UTS_VERSION "#0 Sat May 26 15:59:24 WEST 2012"
+#define UTS_VERSION "#0 Tue Nov 12 11:47:30 WEST 2013"
 #define LINUX_COMPILE_TIME "15:59:24"
-#define LINUX_COMPILE_BY "luis"
-#define LINUX_COMPILE_HOST "clunker"
+#define LINUX_COMPILE_BY "loxdegio"
+#define LINUX_COMPILE_HOST "Lox-PC"
 #define LINUX_COMPILE_DOMAIN "(none)"
-#define LINUX_COMPILER "/home/luis/Desktop/GT-S7500_GB_Opensource/GT-S7500_Kernel/scripts/mkcompile_h: line 81: -v: command not found"
+#define LINUX_COMPILER "/home/lox/Android_Kernel/GT-S7500_Kernel/scripts/mkcompile_h: line 81: -v: command not found"

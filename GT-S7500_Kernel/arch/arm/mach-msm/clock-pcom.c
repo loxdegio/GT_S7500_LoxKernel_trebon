@@ -40,7 +40,12 @@ static int pc_clk_enable(struct clk *clk)
 	 * this problem looks like Qualcomm issue.
 	 * Use follow code temporary until solve that.
 	 */
-	if (id == 86) return 0;
+#if 1
+	if (id == 86) {
+		pr_info("[%s] get 86 clk \n");
+		return 0;
+	}
+#endif
 
 	rc = msm_proc_comm(PCOM_CLKCTL_RPC_ENABLE, &id, NULL);
 	if (rc < 0)

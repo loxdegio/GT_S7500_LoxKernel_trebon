@@ -63,7 +63,7 @@ static volatile int hlt_counter;
 #include <mach/system.h>
 
 #ifdef CONFIG_ARM
-// static DEFINE_PER_CPU(unsigned char, is_idle);
+static DEFINE_PER_CPU(unsigned char, is_idle);
 static ATOMIC_NOTIFIER_HEAD(idle_notifier);
 
 void idle_notifier_register(struct notifier_block *n)
